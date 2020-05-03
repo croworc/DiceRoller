@@ -2,7 +2,7 @@
 
 `DiceRoller` is a companion Android app for the **Udacity** course [Developing Android Apps with Kotlin](https://eu.udacity.com/course/developing-android-apps-with-kotlin--ud9012).
 
-Its a really simple Android app, implemented as an Android Studio project.
+It's a really simple Android app, implemented as an Android Studio project.
 It showcases how to build a very basic Android app in Kotlin. The app's purpose is "to roll a dice".
 
 I am just learning Android app development (and also `git` and `GitHub`) and

@@ -9,6 +9,7 @@
 /.idea/navEditor.xml
 /.idea/vcs.xml
 /.idea/workspace.xml
+/.idea/jarRepositories.xml
 .DS_Store
 /build
 /captures

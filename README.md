@@ -16,7 +16,7 @@ not much else.
 
 Android Studio project. Clone or download as ZIP and import into Android Studio.
 
-Targets Android API level 29 (`Android 10`), so depending on your installation,
+Targets Android API level 30 (`Android 11`), so depending on your installation,
 you may be prompted to download that SDK version during build.
 
 ## Usage

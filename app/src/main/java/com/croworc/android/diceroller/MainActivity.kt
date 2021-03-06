@@ -2,8 +2,11 @@ package com.croworc.android.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+
+private const val KEY_DICE_RESOURCE_ID = "dice_resource_id_key"
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         val btnRoll : Button = findViewById(R.id.roll_button)
@@ -20,6 +24,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         diceImage = findViewById(R.id.dice_image)
+
+        savedInstanceState?.run {
+            val drawableResource: Int = getInt(KEY_DICE_RESOURCE_ID)
+            if (drawableResource != 0) {
+                diceImage.setImageResource(drawableResource)
+                diceImage.tag = drawableResource
+            }
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        if (diceImage.tag != null) {
+            outState.putInt(KEY_DICE_RESOURCE_ID, diceImage.tag as Int)
+        }
     }
 
     private fun rollDice() {
@@ -32,5 +51,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
         diceImage.setImageResource(drawableResource)
+        diceImage.tag = drawableResource
     }
 }
